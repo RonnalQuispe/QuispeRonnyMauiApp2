@@ -1,25 +1,32 @@
-﻿namespace MauiApp2
+﻿using System.Threading.Tasks;
+using MauiApp2.Repositories;
+
+namespace MauiApp2
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private FilesRepository _filesRepository;
 
         public MainPage()
         {
+            _filesRepository = new FilesRepository();
             InitializeComponent();
+            CargarInformacionArchivo();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async Task CargarInformacionArchivo()
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            // Llamada correcta al método DevuelveInformacionArchivo() con paréntesis
+            string texto = await _filesRepository.DevuelveInformacionArchivoAsync();
+            LabelArchivo.Text = texto;
         }
-    }
 
+        private async void BtnGuardarArchivo_Clicked(object sender, EventArgs e)
+        {
+            string texto = TxtArchivo.Text;
+            await _filesRepository.GenerarArchivoAsync(texto);
+            await CargarInformacionArchivo();
+        }
+
+    }
 }
