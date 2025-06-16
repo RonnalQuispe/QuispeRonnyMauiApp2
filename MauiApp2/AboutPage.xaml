@@ -3,16 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.AboutPage">
 
-    <VerticalStackLayout Spacing="10" Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="perro.jpg"
-               HeightRequest="180"
-               SemanticProperties.Description="Imagen personalizada" />
-            <Label FontSize="22" FontAttributes="Bold" Text="Quispe Ronny" VerticalOptions="End" />
-            <Label FontSize="22" Text="el exito" VerticalOptions="End" />
-        </HorizontalStackLayout>
+    <VerticalStackLayout Spacing="20" Padding="30" HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Label Text="Esta app fue desarrollada con .MUCHAS GANAS utilizando Fé y C#risto." />
+            
+        <Image Source="perro.jpg"
+               HeightRequest="180"
+               HorizontalOptions="Center"
+               SemanticProperties.Description="Imagen personalizada" />
+
+
+        <Label Text="Quispe Ronny"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="el exito"
+               FontSize="22"
+               HorizontalTextAlignment="Center" />
+
+
+        <Label Text="Esta app fue desarrollada con .MUCHAS GANAS utilizando Fé y C#risto."
+               HorizontalTextAlignment="Center"
+               FontAttributes="Italic" />
 
     </VerticalStackLayout>
 </ContentPage>
