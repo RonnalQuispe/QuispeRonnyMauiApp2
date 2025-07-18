@@ -16,7 +16,7 @@ namespace MauiApp2
 
         private async Task CargarInformacionArchivo()
         {
-            // Llamada correcta al método DevuelveInformacionArchivo() con paréntesis
+            
             string texto = await _filesRepository.DevuelveInformacionArchivoAsync();
             LabelArchivo.Text = texto;
         }
